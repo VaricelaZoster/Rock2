@@ -1,79 +1,19 @@
+const rock = document.getElementById('rock');
+const paper = document.getElementById('paper');
+const scissor = document.getElementById('scissor');
 
-function getComputerChoice()
-{
-    let a=Math.random() * (3-0)+0;
-    let b=Math.floor(a);
+const rockImage = document.querySelector('.human-hand'); 
 
-    if(b===1)
-    {
-        c="rock";
-    }
-    else if(b===2)
-    {
-        c="paper";
-    }
-    else{
-        c="scissor";
-    }
-    console.log(c);
-    return c;
+function changeRock(){
+    console.log('hello1');
+    document.getElementById('human-hand').src = "hand.png";
+    document.getElementById('human-hand').style.animationDuration = '0s';
 }
-function getHumanChoice()
-{
-    let a=prompt("Enter Choice");
-    a=a.toLowerCase();
-    return a;
-}
-let humanScore=0;
-let computerScore = 0;
-function playRound(humanSelection,computerSelection)
-{
-    if(humanSelection=="rock")
-    {
-        if(computerSelection=="paper")
-        {
-            computerScore+=1;
-        }
-        else if(computerSelection=="scissor")
-        {
-            humanScore+=1;
-        }
-    }
-    else if(humanSelection=="paper")
-    {
-        if(computerSelection=="rock")
-        {
-            humanScore+=1;
-        }
-        else if(computerSelection="scissor")
-        {
-            computerScore+=1;
-        }
-    }
-    else if(humanSelection=="scissor")
-    {
-        if(computerSelection=="rock")
-        {
-            computerScore+=1;
-        }
-        else if(computerSelection=="paper")
-        {
-            humanScore+=1;
-        }
-    }
-    else
-    {
-        throw new Error("Randi hai kya laude");
-    }
-}
-function playGame()
-{
-    for(let i=1;i<=5;i++)
-    {
-        const humanSelection = getHumanChoice();
-        const computerSelection=getComputerChoice();
-        playRound(humanSelection,computerSelection);
-        console.log("Human score = " + humanScore);
-        console.log("Computer score = "+computerScore);
-    }
+
+
+
+function changePaper(){
+    document.getElementById('human-hand').src = "paper.png";
+    document.getElementById('human-hand').style.animationDuration = '0s';
+    document.getElementById('human-hand').style.rotate = '-90deg';
 }
