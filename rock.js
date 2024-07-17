@@ -1,5 +1,4 @@
-console.log("Hello world")
-let c;
+
 function getComputerChoice()
 {
     let a=Math.random() * (3-0)+0;
@@ -78,4 +77,3 @@ function playGame()
         console.log("Computer score = "+computerScore);
     }
 }
-playGame();
